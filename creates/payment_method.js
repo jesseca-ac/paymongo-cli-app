@@ -1,14 +1,35 @@
-const sdk = require('api')('@paymongo/v2#gr8xcr81ylnv4k33i');
-
-// create a particular paymentmethod by name
+// create a particular payment method
 const perform = async (z, bundle) => {
   const response = await z.request({
     method: 'POST',
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'https://api.paymongo.com/v1/payment_methods',
     // if `body` is an object, it'll automatically get run through JSON.stringify
     // if you don't want to send JSON, pass a string in your chosen format here instead
     body: {
-      name: bundle.inputData.name
+      data: {
+        attributes: {
+          type: bundle.inputData.type,
+          details: {
+            card_number: bundle.inputData.card_number,
+            exp_month: bundle.inputData.exp_month,
+            exp_year: bundle.inputData.exp_year,
+            cvc: bundle.inputData.cvc
+          },
+          billing: {
+            address: {
+              line1: bundle.inputData.line1,
+              line2: bundle.inputData.line2,
+              city: bundle.inputData.city,
+              state: bundle.inputData.state,
+              postal_code: bundle.inputData.postal_code,
+              country: bundle.inputData.country
+            },
+            name: bundle.inputData.name,
+            email: bundle.inputData.email,
+            phone: bundle.inputData.phone
+          }
+        }
+      }
     }
   });
   // this should return a single object
