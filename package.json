@@ -1,0 +1,17 @@
+{
+  "name": "paymongo-cli-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout 10000"
+  },
+  "dependencies": {
+    "api": "^6.1.1",
+    "zapier-platform-core": "15.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0"
+  },
+  "private": true
+}
