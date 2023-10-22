@@ -1,3 +1,5 @@
+const sdk = require('api')('@paymongo/v2#gr8xcr81ylnv4k33i');
+
 // create a particular paymentmethod by name
 const perform = async (z, bundle) => {
   const response = await z.request({
