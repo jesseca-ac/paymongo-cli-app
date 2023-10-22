@@ -40,11 +40,11 @@ module.exports = {
   // see here for a full list of available properties:
   // https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#createschema
   key: 'payment_method',
-  noun: 'Paymentmethod',
+  noun: 'Payment Method',
 
   display: {
-    label: 'Create Paymentmethod',
-    description: 'Creates a new paymentmethod, probably with input from previous steps.'
+    label: 'Create Payment Method',
+    description: 'Creates a new payment method, probably with input from previous steps.'
   },
 
   operation: {
@@ -55,7 +55,18 @@ module.exports = {
     // End-users will map data into these fields. In general, they should have any fields that the API can accept. Be sure to accurately mark which fields are required!
     inputFields: [
       {key: 'name', required: true},
-      {key: 'fave_meal', label: 'Favorite Meal', required: false}
+      {key: 'email', required: true},
+      {key: 'phone', required: true},
+      {key: 'card_number', label: 'Card Number', required: true},
+      {key: 'exp_month', label: 'Exp Month', required: true},
+      {key: 'exp_year', label: 'Exp Year', required: true},
+      {key: 'cvc', label: 'CVC', required: true},
+      {key: 'line1', label: 'Address Line 1', required: true},
+      {key: 'line2', label: 'Address Line 2', required: true},
+      {key: 'city', label: 'City', required: true},
+      {key: 'state', label: 'State', required: true},
+      {key: 'postal_code', label: 'Postal Code', required: true},
+      {key: 'country', label: 'Country', required: true}
     ],
 
     // In cases where Zapier needs to show an example record to the user, but we are unable to get a live example
