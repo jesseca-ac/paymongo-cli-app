@@ -1,4 +1,3 @@
-const getPayment = require("./triggers/payment");
 const createPaymentMethod = require("./creates/payment_method");
 module.exports = {
   // This is just shorthand to reference the installed dependencies you have.
